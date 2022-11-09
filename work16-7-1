@@ -1,0 +1,9 @@
+from PetFriend import Cat
+
+cat_1 = Cat("Sam", "boy", "2 years")
+cat_2 = Cat("Alan", "boy", "1 year")
+cat_3 = Cat("May", "girl", "3 years")
+
+print("First cat is", cat_1.getName(), cat_1.getGender(), cat_1.getAge())
+print("Second cat is", cat_2.getName(), cat_2.getGender(), cat_2.getAge())
+print("Third cat is", cat_3.getName(), cat_3.getGender(), cat_3.getAge())
