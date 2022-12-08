@@ -7,8 +7,8 @@ TOKEN = '5960640060:AAG0bCQAbmKGwaBnQ4ik8Bqp2R6Q6sWcuxg'
 bot = telebot.TeleBot(TOKEN)
 
 keys = {
-    'биток': 'BTC',
-    'эфир': 'ETH',
+    'биткоин': 'BTC',
+    'эфириум': 'ETH',
     'доллар': 'USD',
 }
 
