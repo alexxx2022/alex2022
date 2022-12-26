@@ -1,2 +1,2 @@
-valid_email = "@inbox.ru"
-valid_password = ""
+valid_email = "vasya@mail.com"
+valid_password = "12345"
