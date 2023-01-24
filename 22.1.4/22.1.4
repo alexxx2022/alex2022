@@ -1,0 +1,21 @@
+import pytest
+
+def is_triangle(a, b, c):
+    if a + b > c and a + c > b and b + c > a:
+        return True
+    elif a <= 0 or b <= 0 or c <= 0:
+        return False
+    else:
+        return False
+
+@pytest.mark.parametrize("a", [3, 4, 5])
+@pytest.mark.parametrize("b", [3, 4, 5])
+@pytest.mark.parametrize("c", [3, 4, 5])
+def test_positive_triangle(a, b, c):
+    assert  is_triangle(a, b, c) == True
+
+@pytest.mark.parametrize("a", [-3, 0, 1])
+@pytest.mark.parametrize("b", [4, -4,])
+@pytest.mark.parametrize("c", [0, -5, 5])
+def test_negative_triangle(a, b, c):
+    assert  is_triangle(a, b, c) == False
