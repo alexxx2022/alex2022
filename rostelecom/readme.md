@@ -1,2 +1,2 @@
 ROSTELECOM
-Все библиотеки находятся в requirements.txt
+Все библиотеки находятся в libraries.txt
