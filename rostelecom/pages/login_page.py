@@ -22,7 +22,8 @@ class LoginPage(BasePage):
     def input_password(self, password):
         password_input = self.driver.find_element(*self.locators.PASSWORD_INPUT)
         password_input.send_keys(password)
-
+        time.sleep(5) 
+        
     def submit_form(self):
         login_button = self.driver.find_element(*self.locators.LOGIN_BUTTON)
         login_button.click()
@@ -51,7 +52,8 @@ class LoginPage(BasePage):
     def get_login_button(self):
         login_button = self.driver.find_element(*self.locators.LOGIN_BUTTON)
         return login_button
-
+        time.sleep(5) 
+        
     def login(self, username, password):
         self.input_username(username)
         self.input_password(password)
