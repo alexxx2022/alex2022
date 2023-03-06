@@ -9,6 +9,7 @@ def test_site_status_code():
     login_page.open()
     assert driver.current_url == login_page.url
     driver.quit()
+    time.sleep(5) 
 
 def test_site_redirect():
     driver = webdriver.Chrome()
@@ -16,6 +17,7 @@ def test_site_redirect():
     login_page.open()
     assert driver.current_url == login_page.url
     driver.quit()
+    time.sleep(5) 
 
 def test_form_input():
     driver = webdriver.Chrome()
@@ -26,7 +28,9 @@ def test_form_input():
     login_page.submit_form()
     assert driver.current_url != login_page.url
     driver.quit()
-def test_invalid_username_input():
+    time.sleep(5) 
+    
+    def test_invalid_username_input():
     driver = webdriver.Chrome()
     login_page = LoginPage(driver)
     login_page.open()
@@ -37,6 +41,7 @@ def test_invalid_username_input():
     error_message = login_page.get_error_message()
     assert error_message == "Неверный логин или пароль"
     driver.quit()
+    time.sleep(5) 
 
 def test_invalid_password_input():
     driver = webdriver.Chrome()
@@ -48,7 +53,8 @@ def test_invalid_password_input():
     error_message = login_page.get_error_message()
     assert error_message == "Неверный логин или пароль"
     driver.quit()
-
+    time.sleep(5) 
+    
 def test_empty_form_submission():
     driver = webdriver.Chrome()
     login_page = LoginPage(driver)
@@ -57,6 +63,8 @@ def test_empty_form_submission():
     error_message = login_page.get_error_message()
     assert error_message == "Введите логин и пароль"
     driver.quit()
+    time.sleep(5) 
+    
 def test_remember_me_feature():
     driver = webdriver.Chrome()
     login_page = LoginPage(driver)
@@ -69,6 +77,8 @@ def test_remember_me_feature():
     assert login_page.is_username_field_populated() == True
     assert login_page.is_remember_me_checked() == True
     driver.quit()
+    time.sleep(5) 
+    
 def test_form_elements_visibility():
     driver = webdriver.Chrome()
     login_page = LoginPage(driver)
@@ -77,6 +87,7 @@ def test_form_elements_visibility():
     assert login_page.is_password_input_field_visible() == True
     assert login_page.is_submit_button_visible() == True
     driver.quit()
+    time.sleep(5) 
 
 def test_form_elements_enabling():
     driver = webdriver.Chrome()
@@ -86,6 +97,7 @@ def test_form_elements_enabling():
     assert login_page.is_password_input_field_enabled() == True
     assert login_page.is_submit_button_enabled() == True
     driver.quit()
+    time.sleep(5) 
 
 def test_form_input_field_types():
     driver = webdriver.Chrome()
@@ -94,6 +106,7 @@ def test_form_input_field_types():
     assert login_page.get_username_input_field_type() == "Почта"
     assert login_page.get_password_input_field_type() == "Пароль"
     driver.quit()
+    time.sleep(5) 
 
 def test_form_element_placeholder_text():
     driver = webdriver.Chrome()
@@ -102,6 +115,8 @@ def test_form_element_placeholder_text():
     assert login_page.get_username_input_field_placeholder_text() == "Электронная почта"
     assert login_page.get_password_input_field_placeholder_text() == "Пароль"
     driver.quit()
+    time.sleep(5) 
+    
 def test_form_element_labels():
     driver = webdriver.Chrome()
     login_page = LoginPage(driver)
@@ -109,6 +124,7 @@ def test_form_element_labels():
     assert login_page.get_username_input_field_label() == "Логин"
     assert login_page.get_password_input_field_label() == "Пароль"
     driver.quit()
+    time.sleep(5) 
 
 def test_successful_login():
     driver = webdriver.Chrome()
@@ -117,6 +133,8 @@ def test_successful_login():
     login_page.login("valid_username", "valid_password")
     assert login_page.is_logged_in() == True
     driver.quit()
+    time.sleep(5) 
+    
 def test_password_input():
     driver = webdriver.Chrome()
     login_page = LoginPage(driver)
@@ -124,7 +142,8 @@ def test_password_input():
     login_page.input_password("my_secret_password")
     password_input = login_page.get_password_input()
     assert password_input.get_attribute("value") == "my_secret_password"
-
+    time.sleep(5) 
+    
 def test_login_button():
     driver = webdriver.Chrome()
     login_page = LoginPage(driver)
