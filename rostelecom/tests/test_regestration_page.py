@@ -33,6 +33,7 @@ def test_login_form_is_displayed():
 def test_login_form_input_username():
     driver = webdriver.Chrome()
     login_page = LoginPage(driver)
+    
     login_page.open()
     login_page.input_username("test_username")
     assert login_page.driver.find_element(*LoginPageLocators.USERNAME_INPUT).get_attribute("value") == "test_username"
