@@ -33,6 +33,7 @@ def test_invalid_username_input():
     login_page.input_username("invalid_username")
     login_page.input_password("Gjitkyf[eq")
     login_page.submit_form()
+    
     error_message = login_page.get_error_message()
     assert error_message == "Неверный логин или пароль"
     driver.quit()
