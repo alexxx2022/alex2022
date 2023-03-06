@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 from locators.locators import LoginPageLocators
 
+
 class LoginPage(BasePage):
     def __init__(self, driver):
         self.driver = driver
@@ -33,6 +34,7 @@ class LoginPage(BasePage):
     def click_remember_me(self):
         remember_me = self.driver.find_element(*self.locators.REMEMBER_ME_CHECKBOX)
         remember_me.click()
+        
 
     def is_remember_me_checked(self):
         remember_me = self.driver.find_element(*self.locators.REMEMBER_ME_CHECKBOX)
