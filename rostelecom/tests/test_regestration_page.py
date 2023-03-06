@@ -22,6 +22,7 @@ class TestRegistration:
         self.registration_page.input_email("test_email@example.com")
         self.registration_page.input_password("test_password")
         self.registration_page.submit()
+        time.sleep(5) 
 
 def test_login_form_is_displayed():
     driver = webdriver.Chrome()
@@ -46,6 +47,7 @@ def test_login_form_input_password():
     login_page.input_password("test_password")
     assert login_page.driver.find_element(*LoginPageLocators.PASSWORD_INPUT).get_attribute("value") == "test_password"
     driver.quit()
+    time.sleep(5) 
 
 def test_form_submit_with_empty_username_and_password():
     driver = webdriver.Chrome()
@@ -55,6 +57,7 @@ def test_form_submit_with_empty_username_and_password():
     error_message = login_page.get_error_message()
     assert error_message == "Необходимо заполнить поле Имя пользователя или Электронная почта."
     driver.quit()
+    time.sleep(5) 
 
 def test_form_submit_with_empty_username():
     driver = webdriver.Chrome()
@@ -75,6 +78,7 @@ def test_form_submit_with_empty_password():
     error_message = login_page.get_error_message()
     assert error_message == "Password is required"
     driver.quit()
+    time.sleep(5) 
 
 def test_form_submit_with_empty_username():
     driver = webdriver.Chrome()
@@ -96,6 +100,7 @@ def test_form_submit_with_incorrect_username_password():
     error_message = login_page.get_error_message()
     assert error_message == "Invalid username or password"
     driver.quit()
+    time.sleep(5) 
 
 def test_form_submit_with_correct_username_password():
     driver = webdriver.Chrome()
@@ -117,6 +122,7 @@ def test_form_remember_me_functionality():
     login_page.submit_form()
     assert login_page.is_remember_me_selected() == True
     driver.quit()
+    time.sleep(5) 
 
 def test_form_forgot_password_link():
     driver = webdriver.Chrome()
@@ -125,6 +131,8 @@ def test_form_forgot_password_link():
     login_page.click_forgot_password_link()
     assert login_page.driver.current_url == "https://b2c.passport.rt.ru/account_b2c/forgot_password"
     driver.quit()
+    time.sleep(5) 
+    
 def test_form_submit_with_empty_password(driver):
     login_page = LoginPage(driver)
     login_page.open()
