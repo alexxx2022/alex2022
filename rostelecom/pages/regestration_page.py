@@ -23,6 +23,7 @@ class RegistrationPage:
 
     def input_password(self, password):
         self.driver.find_element(*self.password_input).send_keys(password)
+        time.sleep(5)
 
     def submit(self):
         self.driver.find_element(*self.submit_button).click()
